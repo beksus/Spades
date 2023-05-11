@@ -1,0 +1,7 @@
+public class SpadesMain{
+    public static void main(String[] args) {
+        //code here
+        Systm.out.println("hello spades");
+    }
+
+}
