@@ -42,7 +42,7 @@ public class SpadesSys{
     public boolean Play(Card card){
         return false;//change val
     }
-    public Player GetTrickPlayer(){
+    public Player GetTrickTaker(){
         return null;
     }
     public Player TakeTrick(){

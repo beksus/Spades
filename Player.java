@@ -1,6 +1,6 @@
 public class Player{
     //global variable
-    public static int FULL_HAND;
+    public final static int FULL_HAND=13;
 
     //private variables
     private int num;
