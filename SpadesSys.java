@@ -14,6 +14,7 @@ public class SpadesSys{
     private Card[] currTrick;
     private int currLeadingSuit;
 //hello how are you
+// how to upload the files in github?
     public SpadesSys(){
         
     }
