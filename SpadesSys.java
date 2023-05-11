@@ -13,7 +13,7 @@ public class SpadesSys{
     private Player currPlayer;
     private Card[] currTrick;
     private int currLeadingSuit;
-
+//hello how are you
     public SpadesSys(){
         
     }
