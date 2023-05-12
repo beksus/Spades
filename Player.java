@@ -7,7 +7,6 @@ public class Player{
     private int score;
     private int numBid;
     private int numTricks;
-    private int numOverTricks;
     private Card[] hand;
 
     /**
@@ -56,7 +55,7 @@ public class Player{
     /**
      * 
      */
-    public void AddTricks(){
+    public void AddTrick(){
         
     }
     /**
