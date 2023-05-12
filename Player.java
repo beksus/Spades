@@ -8,7 +8,7 @@ public class Player{
     private int numBid;
     private int numTricks;
     private int numOverTricks;
-    private Card[] hand;//crtl-alt-k
+    private Card[] hand;
 
     public Player(){
 
