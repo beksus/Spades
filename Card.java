@@ -13,7 +13,5 @@ public abstract class Card{
     public int GetCard(){
         return 0;//change alter
     }
-    public abstract int CalcTrickBonus(){
-        return 0;
-    }
+    public abstract int CalcTrickBonus();
 }
