@@ -13,20 +13,33 @@ public class SpadesSys{
     private Player currPlayer;
     private Card[] currTrick;
     private int currLeadingSuit;
-//hello how are you
-// how to upload the files in github?
+    /**
+     * 
+     */
     public SpadesSys(){
         
     }
+    /**
+     * @param numPlayers
+     */
     public SpadesSys(int numPlayers){
 
     }
+    /**
+     * 
+     */
     public void FillDeck(){
 
     }
+    /**
+     * 
+     */
     public void DealCards(){
 
     }
+    /**
+     * @param playerNum
+     */
     public void SetCurrPlayer(int playerNum){
         
     }

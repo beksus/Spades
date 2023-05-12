@@ -7,6 +7,9 @@ public abstract class Card{
     private int val;
     
     //methods
+    /**
+     * @param val
+     */
     public Card(int val){
 
     }
