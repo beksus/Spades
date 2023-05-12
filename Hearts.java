@@ -1,5 +1,5 @@
-public class Clubs extends Card{
-    public Clubs(){}
+public class Hearts extends Card{
+    public Hearts(){}
     public int CalcTrickBonus(){
         return 0;
     }
