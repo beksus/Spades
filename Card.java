@@ -13,8 +13,8 @@ public abstract class Card{
     public Card(int val){
 
     }
-    public int GetCard(){
-        return 0;//change alter
+    public int GetVal(){
+        return this.val;//change alter
     }
     public abstract int CalcTrickBonus();
 }
