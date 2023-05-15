@@ -10,75 +10,76 @@ public class Player{
     private Card[] hand;
 
     /**
-     * 
+     * constructor
      */
     public Player(){
         
     }
-    /**
-     * @param num
+    /**constructor
+     * @param num - setting the input num to the this.num
      */
     public Player(int num){
         this.num=num;
     }
-    /**
-     * @param hand
+    /**Method
+     * @param hand - setting the hand to this.hand
      */
     public void SetHand(Card[] hand){
         this.hand = hand;
     }
-    /**
-     * @return
+    /**Method
+     * @return this.hand
      */
     public Card[] GetHand(){
         return this.hand;
     }
-    /**
-     * @param numBid
+    /**Method
+     * @param numBid - is setting the this.numBid to the input value
      */
     public void SetNumBid(int numBid){
         this.numBid = numBid;
     }
-    /**
-     * @return
+    /**Method
+     * @return numBid
      */
     public int GetNumBid(){
         return this.numBid;
     }
     
-    /**
-     * @return
+    /**Method
+     * @return numTricks 
      */
     public int GetNumTricks(){
         return this.numTricks;
     }
-    /**
-     * 
+    /**Method
+     * adding adding 1 to the numTricks each time when it called
      */
     public void AddTrick(){
         this.numTricks++;
     }
-    /**
-     * @param trickBonus
+    /**Method
+     * @param trickBonus - adding the tricks for numTricks
      */
     public void AddTrickBonus(int trickBonus){
         this.numTricks+=trickBonus;
     }
     
-    /**
-     * @param score
+    /**Method
+     * @param score - adding the point earned to the score
      */
     public void CalcScore(int score){
         this.score+=score;//adding score to val
     }
-    /**
-     * @return
+    /**Method
+     * @return type int - returning the player's score
      */
     public int GetScore(){
         return this.score;
     }
-    /**
-     * 
+    /**Method
+     * resetting the variables for numTricks and numBid if the round is new 
+     * by getting the length of this.hand and if it is 0 then it is new round
      */
     public void NewRound(){
         if(this.hand.length==0){
