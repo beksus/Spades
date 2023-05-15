@@ -25,13 +25,13 @@ public class Player{
      * @param hand
      */
     public void SetHand(Card[] hand){
-
+        this.hand = hand;
     }
     /**
      * @return
      */
     public Card[] GetHand(){
-        return null;
+        return this.hand;
     }
     /**
      * @param numBid
@@ -56,13 +56,13 @@ public class Player{
      * 
      */
     public void AddTrick(){
-        
+        this.numTricks++;
     }
     /**
      * @param trickBonus
      */
     public void AddTrickBonus(int trickBonus){
-
+        this.numTricks+=trickBonus;
     }
     
     /**
@@ -81,7 +81,9 @@ public class Player{
      * 
      */
     public void NewRound(){
-
+        if(this.hand.length==0){
+            this.numTricks=0;
+            this.numBid=0;
+        }
     }
-    
 }
