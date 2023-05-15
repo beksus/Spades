@@ -43,30 +43,58 @@ public class SpadesSys{
     public void SetCurrPlayer(int playerNum){
         
     }
+    /**
+     * @return
+     */
     public Player GetCurrPlayer(){
         return null;
     }
+    /**
+     * @param playerNum
+     */
     public void SetFirstPlayer(int playerNum){
         //this.firstPlayer=playerNum;
     }
+    /**
+     * @return
+     */
     public Player GetFirstPlayer(){
         return null;
     }
+    /**
+     * @param card
+     * @return
+     */
     public boolean Play(Card card){
         return false;//change val
     }
+    /**
+     * @return
+     */
     public Player GetTrickTaker(){
         return null;
     }
+    /**
+     * @return
+     */
     public Player TakeTrick(){
         return null;
     }
+    /**
+     * @return
+     */
     public boolean IsRoundOver(){
         return false;//change val
     }
+    /**
+     * @return
+     */
     public Player CheckWinner(){
         return null;
     }
+    /**
+     * @return
+     */
     public boolean IsDeckEmpty(){
         return false;//change val
     }
