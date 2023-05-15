@@ -7,6 +7,6 @@ public class Hearts extends Card{
     }
     
     public int CalcTrickBonus(){
-        return 0;
+        return GetVal()*4;
     }
 }

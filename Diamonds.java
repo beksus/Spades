@@ -7,6 +7,6 @@ public class Diamonds extends Card{
     }
     
     public int CalcTrickBonus(){
-        return 0;
+        return GetVal()*3;
     }
 }

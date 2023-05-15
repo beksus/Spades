@@ -7,6 +7,6 @@ public class Spades extends Card{
     }
     
     public int CalcTrickBonus(){
-        return 0;
+        return GetVal()*5;
     }
 }
