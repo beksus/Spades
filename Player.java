@@ -13,13 +13,13 @@ public class Player{
      * 
      */
     public Player(){
-
+        
     }
     /**
      * @param num
      */
     public Player(int num){
-
+        this.num=num;
     }
     /**
      * @param hand
