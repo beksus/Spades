@@ -11,7 +11,7 @@ public abstract class Card{
      * @param val
      */
     public Card(int val){
-
+        this.val = val;
     }
     /**
      * @return
