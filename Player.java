@@ -8,7 +8,7 @@ public class Player{
     private int numBid;
     private int numTricks;
     private Card[] hand;
-
+    private int numOvertricks;
     /**
      * constructor
      */
@@ -62,14 +62,22 @@ public class Player{
      * @param trickBonus - adding the tricks for numTricks
      */
     public void AddTrickBonus(int trickBonus){
-        this.numTricks+=trickBonus;
+        this.score+=trickBonus;
     }
     
     /**Method
      * @param score - adding the point earned to the score
      */
     public void CalcScore(int score){
-        this.score+=score;//adding score to val
+        if(this.numBid==this.numTricks){
+            this.score +=this.numBid*10; 
+        }
+        else if(this.numBid<this.numTricks){
+            this.numOvertricks+=this.numTricks-this.numBid;
+            if(this.numOvertricks>=10){
+                this.score-=100;
+            }
+        }
     }
     /**Method
      * @return type int - returning the player's score
