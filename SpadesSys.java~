@@ -23,7 +23,7 @@ public class SpadesSys{
      * @param numPlayers
      */
     public SpadesSys(int numPlayers){
-      
+
     }
     /**
      * 
