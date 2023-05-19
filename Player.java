@@ -21,6 +21,9 @@ public class Player{
     public Player(int num){
         this.num=num;
     }
+    public int GetNum(){
+        return this.num;
+    }
     /**Method
      * @param hand - setting the hand to this.hand
      */
@@ -89,10 +92,11 @@ public class Player{
      * resetting the variables for numTricks and numBid if the round is new 
      * by getting the length of this.hand and if it is 0 then it is new round
      */
-    public void NewRound(){
+    public void StartNewRound(){
         if(this.hand.length==0){
             this.numTricks=0;
             this.numBid=0;
         }
     }
+
 }
