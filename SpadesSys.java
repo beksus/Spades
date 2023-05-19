@@ -23,7 +23,7 @@ public class SpadesSys{
      * @param numPlayers
      */
     public SpadesSys(int numPlayers){
-      
+      this.allPlayers=new Player[numPlayers];
     }
     /**
      * 
@@ -34,14 +34,14 @@ public class SpadesSys{
     /**
      * 
      */
-    public void DealCards(){
+    public void DealCards(Player player){
 
     }
     /**
      * @param playerNum set to the currPlayer 
      */
     public void SetCurrPlayer(int playerNum){
-        this.currPlayer=allPlayers[playerNum];
+        this.currPlayer=this.allPlayers[playerNum];
     }
     /**
      * @return type Player
@@ -84,10 +84,13 @@ public class SpadesSys{
      * @return type boolean
      */
     public boolean IsRoundOver(){
-        if(IsDeckEmpty()){
-            return true;
+        boolean isRoundOver=true;//default
+        for(int i=0;i<this.allPlayers.length;i++){
+            if(allPlayers[i].GetHand().length!=0){
+                isRoundOver=false;
+            }
         }
-        return false;//change val
+        return isRoundOver;
     }
     /**
      * @return
@@ -99,7 +102,7 @@ public class SpadesSys{
      * @return
      */
     public boolean IsDeckEmpty(){
-        if(deck.length==0){
+        if(this.deck.length==0){
             return true;
         }
         return false;//change val
