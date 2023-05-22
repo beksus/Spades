@@ -1,4 +1,5 @@
 public class Hearts extends Card{
+
     /**
      * @param val
      */
