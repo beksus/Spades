@@ -120,7 +120,7 @@ public class SpadesSys{
     }
     
     public void SwitchPlayer() {
-       if (this.currPlayer.GetNum() == 4) {
+       if (this.currPlayer.GetNum() == this.allPlayers.length) {
           this.currPlayer = this.allPlayers[0];
        } else {
           this.currPlayer = this.allPlayers[this.currPlayer.GetNum() + 1];
