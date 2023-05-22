@@ -150,14 +150,18 @@ public class SpadesSys{
     }
     
     /**
-     * @return
+     * @return type Player the last trick taker 
      */
     public Player GetTrickTaker(){
        return this.lastTrickTaker;
     }
      
     /**
-     * @return type boolean
+     * @return type boolean 
+     *          - the loop is limited by the numbers of players
+     *          - if the player has no cards in the round the round is over
+     *          - return false if the GetHand not equals to 0
+     *          - return true if the GetHand equals to the 0
      */
     public boolean IsRoundOver(){
         for (int i = 0; i < this.allPlayers.length; i++){
@@ -170,7 +174,11 @@ public class SpadesSys{
     }
     
     /**
-     * @return
+     * @return type Player
+     *          - the loop is limited by the numbers of players
+     *          - the statement for checking the player's value of winnin val
+     *          - return player if the winning val is same or above WINNING_SCORE
+     *          - return null if not
      */
     public Player CheckWinner(){
        for (int i = 0; i < this.allPlayers.length; i++) {
