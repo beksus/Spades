@@ -119,8 +119,13 @@ public class SpadesSys{
        return this.firstPlayer;
     }
     
+    /**
+     *  setting the current player by numerical order 
+     *          - if statement for setting current player if the previous one is allPlayers.length-1
+     *          - else for setting current for next one
+     */
     public void SwitchPlayer() {
-       if (this.currPlayer.GetNum() == this.allPlayers.length) {
+       if (this.currPlayer.GetNum() == this.allPlayers.length-1) {
           this.currPlayer = this.allPlayers[0];
        } else {
           this.currPlayer = this.allPlayers[this.currPlayer.GetNum() + 1];
@@ -129,6 +134,7 @@ public class SpadesSys{
     
     /**
      * @return type Player
+     *          - return this.currPlayer 
      */
     public Player GetCurrPlayer(){
        return this.currPlayer;
@@ -136,21 +142,24 @@ public class SpadesSys{
     
     /**
     * @param card
-     * @return
+     * @return type boolean
+     *          - return false(need to change)
      */
     public boolean Play(Card card){
        return false;//change val
     }
     
     /**
-     * @return
+     * @return type Player
+     *          - return null (need to change)
      */
     public Player TakeTrick(){
        return null;
     }
     
     /**
-     * @return type Player the last trick taker 
+     * @return type Player 
+     *          - return the this.lastTrickTaker variable
      */
     public Player GetTrickTaker(){
        return this.lastTrickTaker;
