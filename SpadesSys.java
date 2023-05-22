@@ -190,7 +190,10 @@ public class SpadesSys{
     }
     
     /**
-     * @return
+     * @return type boolean
+     *          - statement for checking the deck is empty or not
+     *          - return true if the this.deck.length is equals to the 0
+     *          - return false if the this.deck.length is not equal to the 0
      */
     public boolean IsDeckEmpty(){
         if(this.deck.length == 0){
