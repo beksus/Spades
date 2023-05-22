@@ -1,4 +1,5 @@
 public class Diamonds extends Card{
+
     /**
      * @param val
      */
