@@ -1,4 +1,5 @@
 public class Spades extends Card{
+
     /**
      * @param val
      */
