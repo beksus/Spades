@@ -16,7 +16,11 @@ public class Player{
        this.num = num;
     }
     
-    public int GetNum(){
+    /**
+    * @return type integer
+         - returning the this.num
+    */
+   public int GetNum(){
        return this.num;
     }
     
@@ -48,11 +52,18 @@ public class Player{
        return this.numBid;
     }
     
-    public void SetCurrPlay(Card play) {
+    /**
+    * @param play
+            - the play is setted to the currPlayer
+    */
+   public void SetCurrPlay(Card play) {
        this.currPlay = play;
     }
     
-    public Card GetCurrPlay() {
+    /**
+    * @return current Player
+    */
+   public Card GetCurrPlay() {
        return this.currPlay;
     }
     
