@@ -1,10 +1,10 @@
 public class SpadesSys{
-
+   //Global static final variables
     public final static int DEFAULT_NUM_PLAYERS = 2;
     public final static int MAX_NUM_PLAYERS = 4;
     public final static int WINNING_SCORE = 500;
  
-    //private variables not initialized
+    //private variables 
     private Card[] deck;
     private Player[] allPlayers;
     private Player firstPlayer;
@@ -16,6 +16,15 @@ public class SpadesSys{
     
     /**
      * @param numPlayers
+     * the constructor for setting the players number and giving them id or number
+           - initializing the deck
+           - statement for setting and initializing the players
+           - if, the numPlayers are not exeption then the players
+             will be setted to the allPlayers
+             and initialized with the number of players. the for 
+             loop will give the id for each player
+           - else, the players will be done same but
+             with default number of players
      */
     public SpadesSys(int numPlayers){
        this.deck = new Card[0];
@@ -32,7 +41,16 @@ public class SpadesSys{
        }
     }
     
-    private void fillClubs() {
+    /**
+    * the private method for filling the deck for only Clubs
+            - loop limited by the FULL_SUIT which is in
+              Card class value of 13 int
+            - newDeck will be having the length of the
+              deck and that length in the pass of the loop
+              will be setted to the Clubs class value
+            - this.deck will be set to the newDeck
+    */
+   private void fillClubs() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
           Card[] newDeck = new Card[this.deck.length + 1];
           newDeck[this.deck.length] = new Clubs(i + 1);
@@ -40,7 +58,16 @@ public class SpadesSys{
        }
     }
     
-    private void fillDiamonds() {
+    /**
+    * the private method for filling the deck for only Diamonds
+            - loop limited by the FULL_SUIT which is in
+              Card class value of 13 int
+            - newDeck will be having the length of the
+              deck and that length in the pass of the loop
+              will be setted to the Diamonds class value
+            - this.deck will be set to the newDeck
+    */
+   private void fillDiamonds() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
           Card[] newDeck = new Card[this.deck.length + 1];
           newDeck[this.deck.length] = new Diamonds(i + 1);
@@ -48,7 +75,16 @@ public class SpadesSys{
        }
     }
     
-    private void fillHearts() {
+    /**
+    * the private method for filling the deck for only Hearts
+            - loop limited by the FULL_SUIT which is in 
+              Card class value of 13 int
+            - newDeck will be having the length of the 
+              deck and that length in the pass of the loop
+              will be setted to the Hearts class value
+            - this.deck will be set to the newDeck
+    */
+   private void fillHearts() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
           Card[] newDeck = new Card[this.deck.length + 1];
           newDeck[this.deck.length] = new Hearts(i + 1);
@@ -56,7 +92,16 @@ public class SpadesSys{
        }
     }
     
-    private void fillSpades() {
+    /**
+    *  the private method for filling the deck for only Spades
+            - loop limited by the FULL_SUIT which is in 
+              Card class value of 13 int
+            - newDeck will be having the length of the 
+              deck and that length in the pass of the loop
+              will be setted to the Spades class value
+            - this.deck will be set to the newDeck
+    */
+   private void fillSpades() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
           Card[] newDeck = new Card[this.deck.length + 1];
           newDeck[this.deck.length] = new Spades(i + 1);
@@ -84,7 +129,8 @@ public class SpadesSys{
     }
     
     /**
-     * method for filling deck by calling individual methods in SpadeSys class
+     * method for filling deck by calling individual
+     *  methods in SpadeSys class
      */
     public void FillDeck(){
        this.fillClubs();
@@ -94,7 +140,14 @@ public class SpadesSys{
     }
      
     /**
-     * 
+     *  the method for shufling the cards
+           - the hand is initialized with the lenght of 0 
+           - for loop is limited by the FULL_HAND wich is in Card 
+             class and has a value of 13
+           - newHand will be initialized in loop with getting the 
+             length of the hand +1 to enlarge the array
+           - newHand will be randomly set the card into the array
+           - at the end the hand will be set to the player's hand  
      */
     public void DealCards(Player player){
        Card[] hand = new Card[0];
@@ -110,8 +163,10 @@ public class SpadesSys{
     /**
      * the method setting the first player
               - statement for setting
-              - setting randomly when is new round and setting the round to the false
-              - setting to the lastTrickTaker when the round is continued
+              - setting randomly when is new round
+                and setting the round to the false
+              - setting to the lastTrickTaker
+                when the round is continued
      */
     public void SetFirstPlayer(){
        if (this.isNewRound) {
@@ -132,7 +187,8 @@ public class SpadesSys{
     
     /**
      *  setting the current player by numerical order 
-               - if statement for setting current player if the previous one is allPlayers.length-1
+               - if statement for setting current player
+                 if the previous one is allPlayers.length-1
                - else for setting current for next one
      */
     public void SwitchPlayer() {
