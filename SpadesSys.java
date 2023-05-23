@@ -66,7 +66,10 @@ public class SpadesSys{
     
     /**
     *  method for removing card
-            - 
+            - for loop limited by length of the deck
+            - statement for finding the value to remove
+            - when the value found it will be skipped
+            - and new deck will be setted to the this.deck
     */
    private void removeCard() {
        Card[] newDeck = new Card[this.deck.length - 1];
@@ -106,9 +109,9 @@ public class SpadesSys{
     
     /**
      * the method setting the first player
-     *         - statement for setting
-     *         - setting randomly when is new round and setting the round to the false
-     *         - setting to the lastTrickTaker when the round is continued
+              - statement for setting
+              - setting randomly when is new round and setting the round to the false
+              - setting to the lastTrickTaker when the round is continued
      */
     public void SetFirstPlayer(){
        if (this.isNewRound) {
@@ -129,8 +132,8 @@ public class SpadesSys{
     
     /**
      *  setting the current player by numerical order 
-     *          - if statement for setting current player if the previous one is allPlayers.length-1
-     *          - else for setting current for next one
+               - if statement for setting current player if the previous one is allPlayers.length-1
+               - else for setting current for next one
      */
     public void SwitchPlayer() {
        if (this.currPlayer.GetNum() == this.allPlayers.length-1) {
@@ -142,7 +145,7 @@ public class SpadesSys{
     
     /**
      * @return type Player
-     *          - return this.currPlayer 
+               - return this.currPlayer 
      */
     public Player GetCurrPlayer(){
        return this.currPlayer;
@@ -151,7 +154,7 @@ public class SpadesSys{
     /**
     * @param card
      * @return type boolean
-     *          - return false(need to change)
+              - return false(need to change)
      */
     public boolean Play(Card card){
        return false;//change val
@@ -159,7 +162,7 @@ public class SpadesSys{
     
     /**
      * @return type Player
-     *          - return null (need to change)
+               - return null (need to change)
      */
     public Player TakeTrick(){
        return null;
@@ -167,7 +170,7 @@ public class SpadesSys{
     
     /**
      * @return type Player 
-     *          - return the this.lastTrickTaker variable
+               - return the this.lastTrickTaker variable
      */
     public Player GetTrickTaker(){
        return this.lastTrickTaker;
@@ -175,10 +178,10 @@ public class SpadesSys{
      
     /**
      * @return type boolean 
-     *          - the loop is limited by the numbers of players
-     *          - if the player has no cards in the round the round is over
-     *          - return false if the GetHand not equals to 0
-     *          - return true if the GetHand equals to the 0
+               - the loop is limited by the numbers of players
+               - if the player has no cards in the round the round is over
+               - return false if the GetHand not equals to 0
+               - return true if the GetHand equals to the 0
      */
     public boolean IsRoundOver(){
         for (int i = 0; i < this.allPlayers.length; i++){
@@ -192,10 +195,10 @@ public class SpadesSys{
     
     /**
      * @return type Player
-     *          - the loop is limited by the numbers of players
-     *          - the statement for checking the player's value of winnin val
-     *          - return player if the winning val is same or above WINNING_SCORE
-     *          - return null if not
+               - the loop is limited by the numbers of players
+               - the statement for checking the player's value of winnin val
+               - return player if the winning val is same or above WINNING_SCORE
+               - return null if not
      */
     public Player CheckWinner(){
        for (int i = 0; i < this.allPlayers.length; i++) {
@@ -208,9 +211,9 @@ public class SpadesSys{
     
     /**
      * @return type boolean
-     *          - statement for checking the deck is empty or not
-     *          - return true if the this.deck.length is equals to the 0
-     *          - return false if the this.deck.length is not equal to the 0
+               - statement for checking the deck is empty or not
+               - return true if the this.deck.length is equals to the 0
+               - return false if the this.deck.length is not equal to the 0
      */
     public boolean IsDeckEmpty(){
         if(this.deck.length == 0){
