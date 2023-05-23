@@ -64,7 +64,11 @@ public class SpadesSys{
        }
     }
     
-    private void removeCard() {
+    /**
+    *  method for removing card
+            - 
+    */
+   private void removeCard() {
        Card[] newDeck = new Card[this.deck.length - 1];
        int newDeckIndex = 0;
        for (int i = 0; i < this.deck.length; i++) {
@@ -77,7 +81,7 @@ public class SpadesSys{
     }
     
     /**
-     * 
+     * method for filling deck by calling individual methods in SpadeSys class
      */
     public void FillDeck(){
        this.fillClubs();
@@ -101,7 +105,10 @@ public class SpadesSys{
     }
     
     /**
-     * @param playerNum
+     * the method setting the first player
+     *         - statement for setting
+     *         - setting randomly when is new round and setting the round to the false
+     *         - setting to the lastTrickTaker when the round is continued
      */
     public void SetFirstPlayer(){
        if (this.isNewRound) {
@@ -113,7 +120,8 @@ public class SpadesSys{
     }
     
     /**
-     * @return
+     * @return type Player
+     *          - return the first player
      */
     public Player GetFirstPlayer(){
        return this.firstPlayer;
