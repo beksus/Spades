@@ -14,19 +14,10 @@ public class SpadesSys{
     private Player lastTrickTaker;
     private boolean isNewRound;
     
-    /**
-     * @param numPlayers
-     * the constructor for setting the players number and giving them id or number
-           - initializing the deck
-           - statement for setting and initializing the players
-           - if, the numPlayers are not exeption then the players
-             will be setted to the allPlayers
-             and initialized with the number of players. the for 
-             loop will give the id for each player
-           - else, the players will be done same but
-             with default number of players
-     */
-    public SpadesSys(int numPlayers){
+   /**
+    * @param numPlayers
+    */
+   public SpadesSys(int numPlayers){
        this.deck = new Card[0];
        if (numPlayers <= MAX_NUM_PLAYERS && numPlayers >= DEFAULT_NUM_PLAYERS) {
           this.allPlayers = new Player[numPlayers];
@@ -41,14 +32,8 @@ public class SpadesSys{
        }
     }
     
-    /**
-    * the private method for filling the deck for only Clubs
-            - loop limited by the FULL_SUIT which is in
-              Card class value of 13 int
-            - newDeck will be having the length of the
-              deck and that length in the pass of the loop
-              will be setted to the Clubs class value
-            - this.deck will be set to the newDeck
+   /**
+    * 
     */
    private void fillClubs() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
@@ -58,14 +43,8 @@ public class SpadesSys{
        }
     }
     
-    /**
-    * the private method for filling the deck for only Diamonds
-            - loop limited by the FULL_SUIT which is in
-              Card class value of 13 int
-            - newDeck will be having the length of the
-              deck and that length in the pass of the loop
-              will be setted to the Diamonds class value
-            - this.deck will be set to the newDeck
+   /**
+    * 
     */
    private void fillDiamonds() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
@@ -75,14 +54,8 @@ public class SpadesSys{
        }
     }
     
-    /**
-    * the private method for filling the deck for only Hearts
-            - loop limited by the FULL_SUIT which is in 
-              Card class value of 13 int
-            - newDeck will be having the length of the 
-              deck and that length in the pass of the loop
-              will be setted to the Hearts class value
-            - this.deck will be set to the newDeck
+   /**
+    * 
     */
    private void fillHearts() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
@@ -92,14 +65,8 @@ public class SpadesSys{
        }
     }
     
-    /**
-    *  the private method for filling the deck for only Spades
-            - loop limited by the FULL_SUIT which is in 
-              Card class value of 13 int
-            - newDeck will be having the length of the 
-              deck and that length in the pass of the loop
-              will be setted to the Spades class value
-            - this.deck will be set to the newDeck
+   /**
+    * 
     */
    private void fillSpades() {
        for (int i = 0; i < Card.FULL_SUIT; i++) {
@@ -109,12 +76,8 @@ public class SpadesSys{
        }
     }
     
-    /**
-    *  method for removing card
-            - for loop limited by length of the deck
-            - statement for finding the value to remove
-            - when the value found it will be skipped
-            - and new deck will be setted to the this.deck
+   /**
+    * 
     */
    private void removeCard() {
        Card[] newDeck = new Card[this.deck.length - 1];
@@ -129,10 +92,9 @@ public class SpadesSys{
     }
     
     /**
-     * method for filling deck by calling individual
-     *  methods in SpadeSys class
-     */
-    public void FillDeck(){
+    * 
+    */
+   public void FillDeck(){
        this.fillClubs();
        this.fillDiamonds();
        this.fillHearts();
@@ -140,16 +102,9 @@ public class SpadesSys{
     }
      
     /**
-     *  the method for shufling the cards
-           - the hand is initialized with the lenght of 0 
-           - for loop is limited by the FULL_HAND wich is in Card 
-             class and has a value of 13
-           - newHand will be initialized in loop with getting the 
-             length of the hand +1 to enlarge the array
-           - newHand will be randomly set the card into the array
-           - at the end the hand will be set to the player's hand  
-     */
-    public void DealCards(Player player){
+    * @param player
+    */
+   public void DealCards(Player player){
        Card[] hand = new Card[0];
        for (int i = 0; i < Card.FULL_HAND; i++) {
           Card[] newHand = new Card[hand.length + 1];
@@ -161,14 +116,9 @@ public class SpadesSys{
     }
     
     /**
-     * the method setting the first player
-              - statement for setting
-              - setting randomly when is new round
-                and setting the round to the false
-              - setting to the lastTrickTaker
-                when the round is continued
-     */
-    public void SetFirstPlayer(){
+    * 
+    */
+   public void SetFirstPlayer(){
        if (this.isNewRound) {
           this.firstPlayer = this.allPlayers[(int)(Math.random()*this.allPlayers.length)];
           this.isNewRound = false;
@@ -186,12 +136,9 @@ public class SpadesSys{
     }
     
     /**
-     *  setting the current player by numerical order 
-               - if statement for setting current player
-                 if the previous one is allPlayers.length-1
-               - else for setting current for next one
-     */
-    public void SwitchPlayer() {
+    * 
+    */
+   public void SwitchPlayer() {
        if (this.currPlayer.GetNum() == this.allPlayers.length-1) {
           this.currPlayer = this.allPlayers[0];
        } else {
@@ -234,10 +181,6 @@ public class SpadesSys{
      
     /**
      * @return type boolean 
-               - the loop is limited by the numbers of players
-               - if the player has no cards in the round the round is over
-               - return false if the GetHand not equals to 0
-               - return true if the GetHand equals to the 0
      */
     public boolean IsRoundOver(){
         for (int i = 0; i < this.allPlayers.length; i++){
@@ -251,10 +194,6 @@ public class SpadesSys{
     
     /**
      * @return type Player
-               - the loop is limited by the numbers of players
-               - the statement for checking the player's value of winnin val
-               - return player if the winning val is same or above WINNING_SCORE
-               - return null if not
      */
     public Player CheckWinner(){
        for (int i = 0; i < this.allPlayers.length; i++) {
@@ -266,10 +205,8 @@ public class SpadesSys{
     }
     
     /**
+     * 
      * @return type boolean
-               - statement for checking the deck is empty or not
-               - return true if the this.deck.length is equals to the 0
-               - return false if the this.deck.length is not equal to the 0
      */
     public boolean IsDeckEmpty(){
         if(this.deck.length == 0){
