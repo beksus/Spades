@@ -192,8 +192,9 @@ public class SpadesSys{
         return true;
     }
     
-    /**
+    /** Checking if one of the players having winnnin value
      * @return type Player
+     * 
      */
     public Player CheckWinner(){
        for (int i = 0; i < this.allPlayers.length; i++) {
@@ -204,8 +205,7 @@ public class SpadesSys{
        return null;
     }
     
-    /**
-     * 
+    /**Checking if the deck is empty
      * @return type boolean
      */
     public boolean IsDeckEmpty(){
