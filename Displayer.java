@@ -9,7 +9,18 @@ public class Displayer{
      * @param player
      */
     public void PrintHand(Player player){ 
-
+        for(int i=0;i<player.GetHand().length;i++){
+            System.out.print("------------");
+          }
+          System.out.print("-\n");
+          for(int i=0;i<player.GetHand().length;i++){
+            System.out.printf("|%d%10s",player.GetHand()[i].GetVal()," ");
+          }
+          System.out.print("|\n");
+          for(int i =0; i<player.GetHand().length;i++){
+            System.out.printf("|%11s"," ");
+          }
+          System.out.print("|\n");
     }
     /**
      * @param player
