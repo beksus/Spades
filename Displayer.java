@@ -15,18 +15,40 @@ public class Displayer{
      * @param player
      */
     public void PrintScoreboard(Player[] player){
-                
-        for(int i=0;i<player.length;i++){
-            System.out.print("-------------");
+        double n=3;
+        if(player.length>2&&player.length<4){
+            n=4;
+        }
+        else if(player.length>3&&player.length<5){
+            n=4.5;
+        }
+        for(int i=0; i<player.length;i++){
+            System.out.print("------------");
         }
         System.out.print("-\n");
-        for(int i=0;i<player.length;i++){
-            System.out.printf("|%6d%6s",player[i].GetScore(),"");
+        System.out.print("|");
+        for(int i =0;i<player.length*n;i++){
+            System.out.printf("%s"," ");
+        }
+        
+        System.out.print("SCORE BOARD");
+        
+        for(int i=0;i<player.length*n;i++){
+            System.out.printf("%s"," ");
         }
         System.out.print("|\n");
         for(int i=0;i<player.length;i++){
-            System.out.print("-------------");
+            System.out.print("------------");
+        }
+        System.out.print("-\n");
+        for(int i=0;i<player.length;i++){
+            System.out.printf("|%6d%5s",player[i].GetScore(),"");
+        }
+        System.out.print("|\n");
+        for(int i=0;i<player.length;i++){
+            System.out.print("------------");
         }
         System.out.print("-");
-    }
+        
+    }   
 }
