@@ -8,19 +8,28 @@ public class Displayer{
     /**
      * @param player
      */
-    public void PrintHand(Player player){ 
+    public void PrintHand(Player player){
+        char suit='S';
         for(int i=0;i<player.GetHand().length;i++){
             System.out.print("------------");
-          }
-          System.out.print("-\n");
-          for(int i=0;i<player.GetHand().length;i++){
-            System.out.printf("|%d%10s",player.GetHand()[i].GetVal()," ");
-          }
-          System.out.print("|\n");
-          for(int i =0; i<player.GetHand().length;i++){
+        }
+        System.out.print("-\n");
+        for(int i=0;i<player.GetHand().length;i++){
+            if(player.GetHand()[i] instanceof Spades){
+                suit='S';
+            }
+            else if(player.GetHand()[i] instanceof Hearts){
+                suit='H';
+            }
+            else if(player.GetHand()[i] instanceof Diamonds){suit='D';}
+            else if(player.GetHand()[i] instanceof Clubs){suit='C';}
+            System.out.printf("|%d%s%10s",player.GetHand()[i].GetVal(),suit," ");
+        }
+        System.out.print("|\n");
+        for(int i =0; i<player.GetHand().length;i++){
             System.out.printf("|%11s"," ");
-          }
-          System.out.print("|\n");
+        }
+        System.out.print("|\n");
     }
     /**
      * @param player
