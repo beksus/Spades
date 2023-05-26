@@ -1,4 +1,4 @@
-import java.lang.Math;
+
 public class TESTSS{
   public static void main(String[] args){
     int[] score = {6,4,4,4,8,9};
@@ -16,14 +16,14 @@ public class TESTSS{
     System.out.print("|\n");
   }
   
-  public void PrintHand(Player player){
+  public static void PrintHand(Player player){
     
     for(int i=0;i<player.GetHand().length;i++){
       System.out.print("------------");
     }
     System.out.print("-\n");
     for(int i=0;i<player.GetHand().length;i++){
-      System.out.printf("|%d%10s",player.GetHand()[i].GetNum()," ");
+      System.out.printf("|%d%10s",player.GetHand()[i].GetVal()," ");
     }
     System.out.print("|\n");
     for(int i =0; i<player.GetHand().length;i++){
