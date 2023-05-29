@@ -45,14 +45,29 @@ public class TESTSS{
     
     System.out.println("\n\n");
     //============ THE HAND===========
-    int[] score = {6,4,4,4,8,9};
+    int[] score = {6,4,4,4,8,11};
     String[] type={"D","H","C","S","S","C"};
     for(int i=0;i<score.length;i++){
       System.out.print("------------");
     }
     System.out.print("-\n");
+    
     for(int i=0;i<score.length;i++){
-      System.out.printf("|%d%s%9s",score[i],type[i]," ");
+      if(score[i]==11){
+        System.out.printf("|J%s%9s",type[i]," ");
+      }
+      else if(score[i]==12){
+        System.out.printf("|Q%s%9s",type[i]," ");
+      }
+      else if(score[i]==13){
+        System.out.printf("|K%s%9s",type[i]," ");
+      }
+      else if(score[i]==14){
+        System.out.printf("|A%s%9s",type[i]," ");
+      }
+      else{
+        System.out.printf("|%d%s%9s",score[i],type[i]," ");
+      }
     }
     System.out.print("|\n");
     for(int i =0; i<score.length;i++){
