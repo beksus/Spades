@@ -3,7 +3,49 @@ public class Displayer{
      * @param trick
      */
     public void PrintTricks(Card[] trick){
-
+        for(int i=0;i<trick.length;i++){
+            System.out.print("-------------");
+          }
+          System.out.print("-\n");
+          for(int i=0; i<=trick.length;i++){
+            if(i<trick.length){
+              if(trick[i] instanceof Hearts){
+                System.out.printf("|%s%s%10s",trick[i],"H"," ");
+              }
+              else if(trick[i] instanceof Diamonds){
+                System.out.printf("|%s%s%10s",trick[i],"D"," ");
+              }
+              else if(trick[i] instanceof Spades){
+                System.out.printf("|%s%s%10s",trick[i],"S"," ");
+              }
+              else if(trick[i] instanceof Clubs){
+                System.out.printf("|%s%s%10s",trick[i],"C"," ");
+              }
+            }
+            else{
+              System.out.printf("|%12s"," ");
+            }
+          }
+          for(int j=0;j<4;j++){
+            System.out.print("\n");
+            for(int i =0; i<=trick.length;i++){
+              System.out.printf("|%12s"," ");
+            }
+          }
+          
+          System.out.print("\n");
+          for(int i=0; i<=trick.length;i++){
+            if(i<trick.length){
+              System.out.printf("|%10s%s"," ",trick[i]);
+            }
+            else{
+              System.out.printf("|%12s"," ");
+            }
+          }
+          System.out.print("\n");
+          for(int i=0;i<trick.length;i++){
+            System.out.print("-------------");
+          }
     }
     /**
      * @param player
@@ -15,14 +57,10 @@ public class Displayer{
         }
         System.out.print("-\n");
         for(int i=0;i<player.GetHand().length;i++){
-            if(player.GetHand()[i] instanceof Spades){
-                suit='S';
-            }
-            else if(player.GetHand()[i] instanceof Hearts){
-                suit='H';
-            }
-            else if(player.GetHand()[i] instanceof Diamonds){suit='D';}
-            else if(player.GetHand()[i] instanceof Clubs){suit='C';}
+            if(player.GetHand()[i] instanceof Spades){     suit='S'; }
+            else if(player.GetHand()[i] instanceof Hearts){    suit='H';    }
+            else if(player.GetHand()[i] instanceof Diamonds){   suit='D';   }
+            else if(player.GetHand()[i] instanceof Clubs){  suit='C';   }
             System.out.printf("|%d%s%10s",player.GetHand()[i].GetVal(),suit," ");
         }
         System.out.print("|\n");
