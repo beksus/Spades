@@ -95,25 +95,59 @@ public class TESTSS{
     }
     System.out.print("|\n");
   }
-  public static void PrintTricks(Card[] tricks){
-    for(int i=0;i<tricks.length;i++){
+  public void PrintTricks(Card[] trick){
+    char suit='S';
+    char val = 'A';
+    for(int i=0;i<trick.length;i++){
       System.out.print("-------------");
     }
     System.out.print("-\n");
-    for(int i=0; i<=tricks.length;i++){
-      if(i<tricks.length){
-        if(tricks[i] instanceof Hearts){
-          System.out.printf("|%s%s%10s",tricks[i],"H"," ");
+    for(int i=0; i<=trick.length;i++){
+      if(i<trick.length){
+        
+        
+        
+        
+        
+        if(trick[i].GetVal()==Card.ACE){
+          suit='A';
         }
-        else if(tricks[i] instanceof Diamonds){
-          System.out.printf("|%s%s%10s",tricks[i],"D"," ");
+        else if(trick[i].GetVal()==Card.KING){
+          suit='K';
         }
-        else if(tricks[i] instanceof Spades){
-          System.out.printf("|%s%s%10s",tricks[i],"S"," ");
+        else if(trick[i].GetVal()==Card.QUEEN){
+          suit='Q';
         }
-        else if(tricks[i] instanceof Clubs){
-          System.out.printf("|%s%s%10s",tricks[i],"C"," ");
+        else if(trick[i].GetVal()==Card.JACK){
+          suit = 'J';
         }
+        
+        
+        if(trick[i] instanceof Hearts){
+          val = 'H';
+        }
+        else if(trick[i] instanceof Diamonds){
+          val = 'D';
+        }
+        else if(trick[i] instanceof Spades){
+          val = 'S';
+        }
+        else if(trick[i] instanceof Clubs){
+          val = 'C';
+        }
+        
+        if(trick[i].GetVal()>10){
+          System.out.printf("|%s%s%10s",trick[i],val," ");
+        }
+        else{
+          System.out.printf("|%s%s%10s",trick[i],val," ");
+        }
+        
+        
+        
+        
+        
+        
       }
       else{
         System.out.printf("|%12s"," ");
@@ -121,24 +155,23 @@ public class TESTSS{
     }
     for(int j=0;j<4;j++){
       System.out.print("\n");
-      for(int i =0; i<=tricks.length;i++){
+      for(int i =0; i<=trick.length;i++){
         System.out.printf("|%12s"," ");
       }
     }
     
     System.out.print("\n");
-    for(int i=0; i<=tricks.length;i++){
-      if(i<tricks.length){
-        System.out.printf("|%10s%s"," ",tricks[i]);
+    for(int i=0; i<=trick.length;i++){
+      if(i<trick.length){
+        System.out.printf("|%10s%s"," ",trick[i]);
       }
       else{
         System.out.printf("|%12s"," ");
       }
     }
     System.out.print("\n");
-    for(int i=0;i<tricks.length;i++){
+    for(int i=0;i<trick.length;i++){
       System.out.print("-------------");
     }
-    
   }
 }
