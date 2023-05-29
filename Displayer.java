@@ -11,30 +11,15 @@ public class Displayer{
           System.out.print("-\n");
           for(int i=0; i<=trick.length;i++){
             if(i<trick.length){
-              if(trick[i].GetVal()==Card.ACE){
-                val='A';
-              }
-              else if(trick[i].GetVal()==Card.KING){
-                val='K';
-              }
-              else if(trick[i].GetVal()==Card.QUEEN){
-                val='Q';
-              }
-              else if(trick[i].GetVal()==Card.JACK){
-                val = 'J';
-              }
-              if(trick[i] instanceof Hearts){
-                suit = 'H';
-              }
-              else if(trick[i] instanceof Diamonds){
-                suit = 'D';
-              }
-              else if(trick[i] instanceof Spades){
-                suit = 'S';
-              }
-              else if(trick[i] instanceof Clubs){
-                suit = 'C';
-              }
+              if(trick[i].GetVal()==Card.ACE){val='A';}
+              else if(trick[i].GetVal()==Card.KING){val='K';}
+              else if(trick[i].GetVal()==Card.QUEEN){val='Q';}
+              else if(trick[i].GetVal()==Card.JACK){val = 'J';}
+              
+              if(trick[i] instanceof Hearts){suit = 'H';}
+              else if(trick[i] instanceof Diamonds){suit = 'D';}
+              else if(trick[i] instanceof Spades){suit = 'S';}
+              else if(trick[i] instanceof Clubs){suit = 'C';}
               
               if(trick[i].GetVal()>10){
                 System.out.printf("|%s%s%10s",val,suit," ");
