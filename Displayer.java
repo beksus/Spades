@@ -3,23 +3,44 @@ public class Displayer{
      * @param trick
      */
     public void PrintTricks(Card[] trick){
+      char suit='N';
+      char val = 'S';
         for(int i=0;i<trick.length;i++){
             System.out.print("-------------");
           }
           System.out.print("-\n");
           for(int i=0; i<=trick.length;i++){
             if(i<trick.length){
+              if(trick[i].GetVal()==Card.ACE){
+                val='A';
+              }
+              else if(trick[i].GetVal()==Card.KING){
+                val='K';
+              }
+              else if(trick[i].GetVal()==Card.QUEEN){
+                val='Q';
+              }
+              else if(trick[i].GetVal()==Card.JACK){
+                val = 'J';
+              }
               if(trick[i] instanceof Hearts){
-                System.out.printf("|%s%s%10s",trick[i],"H"," ");
+                suit = 'H';
               }
               else if(trick[i] instanceof Diamonds){
-                System.out.printf("|%s%s%10s",trick[i],"D"," ");
+                suit = 'D';
               }
               else if(trick[i] instanceof Spades){
-                System.out.printf("|%s%s%10s",trick[i],"S"," ");
+                suit = 'S';
               }
               else if(trick[i] instanceof Clubs){
-                System.out.printf("|%s%s%10s",trick[i],"C"," ");
+                suit = 'C';
+              }
+              
+              if(trick[i].GetVal()>10){
+                System.out.printf("|%s%s%10s",val,suit," ");
+              }
+              else{
+                System.out.printf("|%d%s%10s",trick[i].GetVal(),suit," ");
               }
             }
             else{
