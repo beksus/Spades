@@ -73,6 +73,9 @@ public class Displayer{
             else if(player.GetHand()[i].GetVal()==Card.JACK){
               System.out.printf("|J%s%10s",suit," ");
             }
+            else{
+              System.out.printf("|%d%s%10s",player.GetHand()[i].GetVal(),suit," ");
+            }
         }
         System.out.print("|\n");
         for(int i =0; i<player.GetHand().length;i++){
