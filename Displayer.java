@@ -61,7 +61,18 @@ public class Displayer{
             else if(player.GetHand()[i] instanceof Hearts){    suit='H';    }
             else if(player.GetHand()[i] instanceof Diamonds){   suit='D';   }
             else if(player.GetHand()[i] instanceof Clubs){  suit='C';   }
-            System.out.printf("|%d%s%10s",player.GetHand()[i].GetVal(),suit," ");
+            if(player.GetHand()[i].GetVal()==Card.ACE){
+              System.out.printf("|A%s%10s",suit," ");
+            }
+            else if(player.GetHand()[i].GetVal()==Card.KING){
+              System.out.printf("|K%s%10s",suit," ");
+            }
+            else if(player.GetHand()[i].GetVal()==Card.QUEEN){
+              System.out.printf("|Q%s%10s",suit," ");
+            }
+            else if(player.GetHand()[i].GetVal()==Card.JACK){
+              System.out.printf("|J%s%10s",suit," ");
+            }
         }
         System.out.print("|\n");
         for(int i =0; i<player.GetHand().length;i++){
