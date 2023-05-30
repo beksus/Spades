@@ -3,38 +3,38 @@ public class Displayer{
      * @param trick
      */
     public void PrintTricks(Card[] trick){
-      char suit='N';
-      char val = 'S';
-        for(int i=0;i<trick.length;i++){
+      char suit='N';// just to initialize the suit for printing
+      char val = 'S';//this variable is for printing the signs like King, Queen, Jack and Ace
+        for(int i=0;i<trick.length;i++){//dynamic printing the line for displaying the board
             System.out.print("-------------");
           }
-          System.out.print("-\n");
-          for(int i=0; i<=trick.length;i++){
-            if(i<trick.length){
-              if(trick[i].GetVal()==Card.ACE){val='A';}
-              else if(trick[i].GetVal()==Card.KING){val='K';}
-              else if(trick[i].GetVal()==Card.QUEEN){val='Q';}
-              else if(trick[i].GetVal()==Card.JACK){val = 'J';}
+          System.out.print("-\n");//next line
+          for(int i=0; i<=trick.length;i++){// dynamic printing the board and its content 
+            if(i<trick.length){//statement for printing the not empty slot
+              if(trick[i].GetVal()==Card.ACE){val='A';}//printing case for Ace
+              else if(trick[i].GetVal()==Card.KING){val='K';}// case for King
+              else if(trick[i].GetVal()==Card.QUEEN){val='Q';}// case for Queen
+              else if(trick[i].GetVal()==Card.JACK){val = 'J';}// case for Jack
               
-              if(trick[i] instanceof Hearts){suit = 'H';}
-              else if(trick[i] instanceof Diamonds){suit = 'D';}
-              else if(trick[i] instanceof Spades){suit = 'S';}
-              else if(trick[i] instanceof Clubs){suit = 'C';}
+              if(trick[i] instanceof Hearts){suit = 'H';}// statement for priting the suit for Hearts
+              else if(trick[i] instanceof Diamonds){suit = 'D';}// case for Diamond
+              else if(trick[i] instanceof Spades){suit = 'S';}// case for Spades
+              else if(trick[i] instanceof Clubs){suit = 'C';}// case for Clubs
               
-              if(trick[i].GetVal()>10){
+              if(trick[i].GetVal()>10){//printing the card with the values over 10 like Jack, Queen, King and Ace
                 System.out.printf("|%s%s%10s",val,suit," ");
               }
               else{
-                System.out.printf("|%d%s%10s",trick[i].GetVal(),suit," ");
+                System.out.printf("|%d%s%10s",trick[i].GetVal(),suit," ");//printing the regular card with the values lower than 11
               }
             }
             else{
-              System.out.printf("|%12s"," ");
+              System.out.printf("|%12s"," ");//printing the empty slot for the card
             }
           }
-          for(int j=0;j<4;j++){
+          for(int j=0;j<4;j++){//loop to make it like card layout
             System.out.print("\n");
-            for(int i =0; i<=trick.length;i++){
+            for(int i =0; i<=trick.length;i++){//printing the layout for the card
               System.out.printf("|%12s"," ");
             }
           }
