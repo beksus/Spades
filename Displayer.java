@@ -93,18 +93,17 @@ public class Displayer{
      * @param player
      */
     public void PrintScoreboard(Player[] player){
-        double n=3;// to have a dinamic displayer
+        double n=5.5;// to have a dinamic displayer
         if(player.length>2&&player.length<4){
-            n=4;
+          n=6.3333333333333343788;
         }
         else if(player.length>3&&player.length<5){
-            n=4.5;
+          n=6.8;
         }
 
         for(int i=0; i<player.length;i++){//upper line for board
-            System.out.print("------------");
+          System.out.print("-----------------");
         }
-
         System.out.print("-\n");// next line
         System.out.print("|");//closing brackets for board
 
@@ -120,16 +119,37 @@ public class Displayer{
         System.out.print("|\n");//printing the next line
 
         for(int i=0;i<player.length;i++){//printing the middle line
-            System.out.print("------------");
+            System.out.print("-----------------");
         }
 
         System.out.print("-\n");//next line
+        
         for(int i=0;i<player.length;i++){//printing the score and aligning 
-            System.out.printf("|%6d%5s",player[i].GetScore(),"");
-        }
+          System.out.printf("| Player:%3d%5s",player[i].GetNum(),"");
+      }
+      System.out.print("|\n");//next line
+      
+      for(int i=0;i<player.length;i++){//printing the score and aligning 
+          System.out.printf("| Bid:%6d%5s",player[i].GetNumBid(),"");
+      }
+      System.out.print("|\n");//next line
+      
+      for(int i=0;i<player.length;i++){//printing the score and aligning 
+          System.out.printf("| Tricks:%3d%5s",player[i].GetNumTricks(),"");
+      }
+      System.out.print("|\n");//next line
+      
+      for(int i=0;i<player.length;i++){//printing the score and aligning 
+          System.out.printf("| Overtricks:%2d%2s",player[i].GetOvertricks(),"");
+      }
+      System.out.print("|\n");//next line
+      
+      for(int i=0;i<player.length;i++){//printing the score and aligning 
+          System.out.printf("| Score:%3d%6s",player[i].GetScore(),"");
+      }
         System.out.print("|\n");//next line
         for(int i=0;i<player.length;i++){//printing the bottom line
-            System.out.print("------------");
+            System.out.print("-----------------");
         }
         System.out.print("-");
         
