@@ -65,7 +65,7 @@ public class Displayer{
           }
           System.out.print("\n");
           for(int i=0;i<trick.length;i++){
-            System.out.print("-------------");
+            System.out.print("-------------");//printing the line
           }
     }
     /**
@@ -73,30 +73,26 @@ public class Displayer{
      */
     public void PrintHand(Player player){
         char suit='S';
-        for(int i=0;i<player.GetHand().length;i++){
+        char val='A';
+        for(int i=0;i<player.GetHand().length;i++){//printing line loop
             System.out.print("------------");
         }
         System.out.print("-\n");
-        for(int i=0;i<player.GetHand().length;i++){
-            if(player.GetHand()[i] instanceof Spades){     suit='S'; }
-            else if(player.GetHand()[i] instanceof Hearts){    suit='H';    }
-            else if(player.GetHand()[i] instanceof Diamonds){   suit='D';   }
-            else if(player.GetHand()[i] instanceof Clubs){  suit='C';   }
-            if(player.GetHand()[i].GetVal()==Card.ACE){
-              System.out.printf("|A%s%10s",suit," ");
-            }
-            else if(player.GetHand()[i].GetVal()==Card.KING){
-              System.out.printf("|K%s%10s",suit," ");
-            }
-            else if(player.GetHand()[i].GetVal()==Card.QUEEN){
-              System.out.printf("|Q%s%10s",suit," ");
-            }
-            else if(player.GetHand()[i].GetVal()==Card.JACK){
-              System.out.printf("|J%s%10s",suit," ");
-            }
-            else{
-              System.out.printf("|%d%s%10s",player.GetHand()[i].GetVal(),suit," ");
-            }
+        for(int i=0;i<player.GetHand().length;i++){//loop for the printing the hand
+            if(player.GetHand()[i] instanceof Spades){suit='S';}//statement for printing the suits of Spades
+            else if(player.GetHand()[i] instanceof Hearts){suit='H';}//suits for Hearts
+            else if(player.GetHand()[i] instanceof Diamonds){suit='D';}//suits for the Diamonds
+            else if(player.GetHand()[i] instanceof Clubs){suit='C';}//for Clubs
+            if(trick[i] instanceof Hearts){suit = 'H';}// statement for priting the suit for Hearts
+              else if(trick[i] instanceof Diamonds){suit = 'D';}// case for Diamond
+              else if(trick[i] instanceof Spades){suit = 'S';}// case for Spades
+              else if(trick[i] instanceof Clubs){suit = 'C';}// case for Clubs
+              if(trick[i].GetVal()>10){//printing the card with the values over 10 like Jack, Queen, King and Ace
+                System.out.printf("|%s%s%10s",val,suit," ");
+              }
+              else{
+                System.out.printf("|%d%s%10s",trick[i].GetVal(),suit," ");//printing the regular card with the values lower than 11
+              }
         }
         System.out.print("|\n");
         for(int i =0; i<player.GetHand().length;i++){
@@ -109,10 +105,10 @@ public class Displayer{
      */
     public void PrintScoreboard(Player[] player){
         double n=5.5;// to have a dinamic displayer
-        if(player.length>2&&player.length<4){
-          n=6.4;
+        if(player.length>2&&player.length<4){//values to be multiplied in the loop to have the dynamic
+          n=6.4;//                             -board dependint on the amout of plyaers
         }
-        else if(player.length>3&&player.length<5){
+        else if(player.length>3&&player.length<5){//players length are 4
           n=6.8;
         }
 
@@ -139,22 +135,22 @@ public class Displayer{
 
         System.out.print("-\n");//next line
         
-        for(int i=0;i<player.length;i++){//printing the score and aligning 
+        for(int i=0;i<player.length;i++){//printing the Player index or id and aligning 
           System.out.printf("| Player:%3d%5s",player[i].GetNum(),"");
       }
       System.out.print("|\n");//next line
       
-      for(int i=0;i<player.length;i++){//printing the score and aligning 
+      for(int i=0;i<player.length;i++){//printing the Bid and aligning 
           System.out.printf("| Bid:%6d%5s",player[i].GetNumBid(),"");
       }
       System.out.print("|\n");//next line
       
-      for(int i=0;i<player.length;i++){//printing the score and aligning 
+      for(int i=0;i<player.length;i++){//printing the Tricsk and aligning 
           System.out.printf("| Tricks:%3d%5s",player[i].GetNumTricks(),"");
       }
       System.out.print("|\n");//next line
       
-      for(int i=0;i<player.length;i++){//printing the score and aligning 
+      for(int i=0;i<player.length;i++){//printing the Overtricks and aligning 
           System.out.printf("| Overtricks:%2d%2s",player[i].GetOvertricks(),"");
       }
       System.out.print("|\n");//next line
