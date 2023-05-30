@@ -110,7 +110,7 @@ public class Displayer{
     public void PrintScoreboard(Player[] player){
         double n=5.5;// to have a dinamic displayer
         if(player.length>2&&player.length<4){
-          n=6.3333333333333343788;
+          n=6.4;
         }
         else if(player.length>3&&player.length<5){
           n=6.8;
