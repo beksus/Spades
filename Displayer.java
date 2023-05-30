@@ -41,11 +41,26 @@ public class Displayer{
           
           System.out.print("\n");
           for(int i=0; i<=trick.length;i++){
-            if(i<trick.length){
-              System.out.printf("|%10s%s"," ",trick[i]);
+            if(i<trick.length){//statement for printing the not empty slot
+              if(trick[i].GetVal()==Card.ACE){val='A';}//printing case for Ace
+              else if(trick[i].GetVal()==Card.KING){val='K';}// case for King
+              else if(trick[i].GetVal()==Card.QUEEN){val='Q';}// case for Queen
+              else if(trick[i].GetVal()==Card.JACK){val = 'J';}// case for Jack
+              
+              if(trick[i] instanceof Hearts){suit = 'H';}// statement for priting the suit for Hearts
+              else if(trick[i] instanceof Diamonds){suit = 'D';}// case for Diamond
+              else if(trick[i] instanceof Spades){suit = 'S';}// case for Spades
+              else if(trick[i] instanceof Clubs){suit = 'C';}// case for Clubs
+              
+              if(trick[i].GetVal()>10){//printing the card with the values over 10 like Jack, Queen, King and Ace
+                System.out.printf("|%10s%s%s"," ",val,suit);// printing the opposite site
+              }
+              else{
+                System.out.printf("|%10s%d%s"," ",trick[i].GetVal(),suit);//printing the regular card with the values lower than 11 and printint the opposite side
+              }
             }
             else{
-              System.out.printf("|%12s"," ");
+              System.out.printf("|%12s"," ");//printing the empty slot for the card
             }
           }
           System.out.print("\n");
