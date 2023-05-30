@@ -119,4 +119,7 @@ public class Player{
           this.numBid=0;
        }
     }
+    public int GetOvertricks(){
+      return this.numOvertricks;
+   }
  }
